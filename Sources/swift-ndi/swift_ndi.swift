@@ -12,7 +12,7 @@ public class swift_ndi {
 
     public init?() {
         let result = NDIlib_initialize()
-        
+        NDIlib_version()
         if !result {
             return nil
         }

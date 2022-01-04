@@ -1,3 +1,3 @@
 # swift-ndi
 
-A description of this package.
+Swift wrapper around NewTek's NDI SDK.
