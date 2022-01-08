@@ -1,6 +1,6 @@
-import CiOSNDI
 import Foundation
 import CoreMedia
+import NDI_iOS
 
 public class swift_ndi {
     

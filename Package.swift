@@ -14,15 +14,13 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "CiOSNDI", path: "Libraries"),
-//        .systemLibrary(name: "CiOSNDI", path: "Libraries/"),
-//        .binaryTarget(name: "libndi_advanced_ios", path: "/Libraries/NDI_iOS_lib/libndi_advanced_ios.a"),
         .target(
-            name: "swift-ndi",
-            dependencies: ["CiOSNDI"]),
+            name: "swift-ndi", dependencies: ["NDI_iOS"]),
         .testTarget(
             name: "swift-ndiTests",
             dependencies: ["swift-ndi"]),
+        .binaryTarget(name: "NDI_iOS", path: "Libraries/ndi_artifacts/5.0.8/NDI_iOS.xcframework")
+//        .binaryTarget(name: "NDI_iOS", url: "https://192.168.170.117/static/ndi_5.0.8/NDI_iOS.xcframework.zip", checksum: "564ab41ffe8f59acd2a971f5a720294f4dff6e55205c101ce480cb6cbd2a7d1c"),
     ]
     
 )
