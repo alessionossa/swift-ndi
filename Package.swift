@@ -14,12 +14,13 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "CiOSNDI", path: "Libraries"),
-//        .systemLibrary(name: "CiOSNDI", path: "Libraries/"),
+//        .target(name: "CiOSNDI", path: "Libraries"),
+        .systemLibrary(name: "CiOSNDI", path: "Libraries/"),
 //        .binaryTarget(name: "libndi_advanced_ios", path: "/Libraries/NDI_iOS_lib/libndi_advanced_ios.a"),
         .target(
             name: "swift-ndi",
-            dependencies: ["CiOSNDI"]),
+            dependencies: ["CiOSNDI"]
+        ),
         .testTarget(
             name: "swift-ndiTests",
             dependencies: ["swift-ndi"]),
