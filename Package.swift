@@ -12,11 +12,10 @@ let package = Package(
             name: "swift-ndi",
             targets: ["swift-ndi"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "CiOSNDI", path: "../CiOSNDI")
+    ],
     targets: [
-        .target(name: "CiOSNDI", path: "Libraries"),
-//        .systemLibrary(name: "CiOSNDI", path: "Libraries/"),
-//        .binaryTarget(name: "libndi_advanced_ios", path: "/Libraries/NDI_iOS_lib/libndi_advanced_ios.a"),
         .target(
             name: "swift-ndi",
             dependencies: ["CiOSNDI"]),
