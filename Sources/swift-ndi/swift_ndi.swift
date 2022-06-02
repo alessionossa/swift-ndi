@@ -18,7 +18,7 @@ public class swift_ndi {
         }
     }
 
-    func start(_ name: String?) {
+    public func start(_ name: String?) {
         self.stop()
 
         let ndiName = (name as NSString?)?.cString(using: String.Encoding.utf8.rawValue)
@@ -31,14 +31,14 @@ public class swift_ndi {
         }
     }
 
-    func stop() {
+    public func stop() {
         if ndiSend != nil {
             NDIlib_send_destroy(ndiSend)
             ndiSend = nil
         }
     }
 
-    func send(_ sampleBuffer: CMSampleBuffer) {
+    public func send(_ sampleBuffer: CMSampleBuffer) {
         if ndiSend == nil {
             print("ERROR: NDI instance is nil")
             return
