@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6C064A928491E4900C58942 /* swift_ndi_SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C064A828491E4900C58942 /* swift_ndi_SampleApp.swift */; };
-		A6C064AB28491E4900C58942 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C064AA28491E4900C58942 /* ContentView.swift */; };
+		A6C064A928491E4900C58942 /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C064A828491E4900C58942 /* SampleApp.swift */; };
+		A6C064AB28491E4900C58942 /* CameraMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C064AA28491E4900C58942 /* CameraMainView.swift */; };
 		A6C064AD28491E4B00C58942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C064AC28491E4B00C58942 /* Assets.xcassets */; };
 		A6C064B028491E4B00C58942 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C064AF28491E4B00C58942 /* Preview Assets.xcassets */; };
 		A6C064BB2849207C00C58942 /* swift-ndi in Frameworks */ = {isa = PBXBuildFile; productRef = A6C064BA2849207C00C58942 /* swift-ndi */; };
@@ -17,8 +17,8 @@
 
 /* Begin PBXFileReference section */
 		A6C064A528491E4900C58942 /* swift-ndi Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-ndi Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6C064A828491E4900C58942 /* swift_ndi_SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_ndi_SampleApp.swift; sourceTree = "<group>"; };
-		A6C064AA28491E4900C58942 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A6C064A828491E4900C58942 /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
+		A6C064AA28491E4900C58942 /* CameraMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMainView.swift; sourceTree = "<group>"; };
 		A6C064AC28491E4B00C58942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6C064AF28491E4B00C58942 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A6C064B828491FE500C58942 /* swift-ndi */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-ndi"; path = ..; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		A6C0649C28491E4900C58942 = {
 			isa = PBXGroup;
 			children = (
-				A6C064A728491E4900C58942 /* swift-ndi Sample */,
+				A6C064A728491E4900C58942 /* Sample App */,
 				A6C064B728491FE500C58942 /* Packages */,
 				A6C064A628491E4900C58942 /* Products */,
 				A6C064B92849207C00C58942 /* Frameworks */,
@@ -55,16 +55,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6C064A728491E4900C58942 /* swift-ndi Sample */ = {
+		A6C064A728491E4900C58942 /* Sample App */ = {
 			isa = PBXGroup;
 			children = (
-				A6C064A828491E4900C58942 /* swift_ndi_SampleApp.swift */,
+				A6C064A828491E4900C58942 /* SampleApp.swift */,
 				A6C064BE2849252D00C58942 /* ViewModels */,
-				A6C064BC2849250D00C58942 /* View */,
+				A6C064BC2849250D00C58942 /* Camera */,
 				A6C064AC28491E4B00C58942 /* Assets.xcassets */,
 				A6C064AE28491E4B00C58942 /* Preview Content */,
 			);
-			path = "swift-ndi Sample";
+			path = "Sample App";
 			sourceTree = "<group>";
 		};
 		A6C064AE28491E4B00C58942 /* Preview Content */ = {
@@ -90,12 +90,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A6C064BC2849250D00C58942 /* View */ = {
+		A6C064BC2849250D00C58942 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				A6C064AA28491E4900C58942 /* ContentView.swift */,
+				A6C064AA28491E4900C58942 /* CameraMainView.swift */,
 			);
-			path = View;
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		A6C064BE2849252D00C58942 /* ViewModels */ = {
@@ -179,8 +179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6C064AB28491E4900C58942 /* ContentView.swift in Sources */,
-				A6C064A928491E4900C58942 /* swift_ndi_SampleApp.swift in Sources */,
+				A6C064AB28491E4900C58942 /* CameraMainView.swift in Sources */,
+				A6C064A928491E4900C58942 /* SampleApp.swift in Sources */,
 				A6C064C02849256200C58942 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +309,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swift-ndi Sample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sample App/Preview Content\"";
 				DEVELOPMENT_TEAM = NK42ZNZZG9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -339,7 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"swift-ndi Sample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sample App/Preview Content\"";
 				DEVELOPMENT_TEAM = NK42ZNZZG9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
