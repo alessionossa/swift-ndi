@@ -1,6 +1,6 @@
 module CiOSNDI {
-  umbrella header "../../Headers/Processing.NDI.Advanced.h"
+  umbrella header "/Library/NDI Advanced SDK for Apple/include/Processing.NDI.Lib.h"
   // link "/Library/NDI Advanced SDK for Apple/lib/iOS/libndi_advanced_ios.a"
-  link "ndi_ios"
+  link "ndi_advanced_ios"
   export *
 }
