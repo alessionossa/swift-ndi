@@ -14,15 +14,19 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "CiOSNDI", path: "Libraries"),
-//        .systemLibrary(name: "CiOSNDI", path: "Libraries/"),
-//        .binaryTarget(name: "libndi_advanced_ios", path: "/Libraries/NDI_iOS_lib/libndi_advanced_ios.a"),
+        .systemLibrary(name: "CiOSNDI"),
         .target(
             name: "swift-ndi",
-            dependencies: ["CiOSNDI"]),
-        .testTarget(
-            name: "swift-ndiTests",
-            dependencies: ["swift-ndi"]),
+            dependencies: ["CiOSNDI"],
+            linkerSettings: [
+                .linkedFramework("Accelerate"),
+                .linkedFramework("VideoToolbox"),
+                .linkedLibrary("c++")
+            ]
+        ),
+//        .testTarget(
+//            name: "swift-ndiTests",
+//            dependencies: ["swift-ndi"]),
     ]
     
 )

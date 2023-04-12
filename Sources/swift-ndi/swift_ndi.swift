@@ -3,7 +3,7 @@ import Foundation
 import CoreMedia
 
 public class swift_ndi {
-    
+
     private var ndiSend: NDIlib_send_instance_t?
 
 //    class func initialize() {
@@ -17,10 +17,10 @@ public class swift_ndi {
             return nil
         }
     }
-    
-    func start(_ name: String?) {
+
+    public func start(_ name: String?) {
         self.stop()
-        
+
         let ndiName = (name as NSString?)?.cString(using: String.Encoding.utf8.rawValue)
         var options = NDIlib_send_create_t(p_ndi_name: ndiName, p_groups: nil, clock_video: false, clock_audio: false)
         self.ndiSend = NDIlib_send_create(&options)
@@ -30,20 +30,20 @@ public class swift_ndi {
             print("Successfully created sender")
         }
     }
-    
-    func stop() {
+
+    public func stop() {
         if ndiSend != nil {
             NDIlib_send_destroy(ndiSend)
             ndiSend = nil
         }
     }
-    
-    func send(_ sampleBuffer: CMSampleBuffer) {
+
+    public func send(_ sampleBuffer: CMSampleBuffer) {
         if ndiSend == nil {
             print("ERROR: NDI instance is nil")
             return
         }
-        
+
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             print("Failed to get image buffer")
             return
@@ -59,7 +59,7 @@ public class swift_ndi {
         video_frame.picture_aspect_ratio = 1.777777777777778
         video_frame.line_stride_in_bytes = 2560
         video_frame.p_metadata = nil
-        
+
         CVPixelBufferLockBaseAddress(imageBuffer, .readOnly)
         guard let bufferRawPointer = CVPixelBufferGetBaseAddress(imageBuffer) else { return }
         let dataPointer = bufferRawPointer.assumingMemoryBound(to: UInt8.self)
@@ -67,6 +67,6 @@ public class swift_ndi {
         CVPixelBufferUnlockBaseAddress(imageBuffer, .readOnly)
 
         NDIlib_send_send_video_async_v2(ndiSend, &video_frame)
-        
+
     }
 }
